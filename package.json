@@ -1,0 +1,18 @@
+{
+  "name": "cubedev",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "cubejs-server"
+  },
+  "template": "docker",
+  "templateVersion": "0.28.44",
+  "devDependencies": {
+    "@cubejs-backend/server": "^0.28.44",
+    "@cubejs-backend/sqlite-driver": "^0.28.44"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1",
+    "prettier": "^2.3.0"
+  }
+}
