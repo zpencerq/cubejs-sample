@@ -17,15 +17,23 @@ cube(`Users`, {
       type: `number`,
     },
 
+    newInboundCount: {
+      sql: userId,
+      type: `countDistinct`,
+      filters: [{ sql: `${isInbound} = 1` }],
+    },
     predictedMonthlyActivations: {
       sql: `${newInboundCount} * ${daysPerActivationPastYear} / ${averageDaysInMonth}`,
       type: `number`,
     },
 
-    newInboundCount: {
-      sql: userId,
-      type: `countDistinct`,
-      filters: [{ sql: `${isInbound} = 1` }],
+    newInboundCount2: {
+      sql: isInbound,
+      type: `sum`,
+    },
+    predictedMonthlyActivations2: {
+      sql: `${newInboundCount2} * ${daysPerActivationPastYear} / ${averageDaysInMonth}`,
+      type: `number`,
     },
   },
 
